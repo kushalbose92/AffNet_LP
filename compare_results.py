@@ -7,7 +7,7 @@ program:
 # setup environment
 env = 'windows' 
 if env=='windows':
-    root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/'
+    root = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/'
     data_folder = root+"Datasets/"
 
 import pandas as pd

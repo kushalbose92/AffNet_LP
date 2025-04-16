@@ -1,6 +1,5 @@
 """
 program: Compare link prediction accuracy from results obtained in 4 approaches
-author: indranil ojha
 
 """
 
@@ -10,7 +9,7 @@ import numpy as np
 
 env = 'windows' 
 if env=='windows':
-    root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/'
+    root = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/'
 results_fname = root + "results/approaches.csv"
 
 # Define the mapping for combinations

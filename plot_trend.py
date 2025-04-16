@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-path = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/results'
+path = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/results'
 datasets = ['Cora', 'CiteSeer', 'Cornell', 'Texas', 'Wisconsin', 'Actor']
 
 # Define the formats

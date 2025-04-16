@@ -1,14 +1,13 @@
 """
 program: Compare link prediction and learning curve for 4 approaches
 version: sparse tf version, multi-headed affinity with separator learning
-author: indranil ojha
 
 """
 
 # setup environment
 env = 'windows' 
 if env=='windows':
-    root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/'
+    root = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/'
     data_folder = root+"Datasets/"
 
 # import libraries, including utils

@@ -6,7 +6,7 @@ program: plot heads ablation results
 # setup environment
 env = 'windows' 
 if env=='windows':
-    root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/'
+    root = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/'
 
 import pandas as pd
 import matplotlib.pyplot as plt

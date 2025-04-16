@@ -6,7 +6,7 @@ program: plots beta values of each of 10 rounds per dataset
 # setup environment
 env = 'windows' 
 if env=='windows':
-    path = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/results/'
+    path = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/results/'
 
 import pandas as pd
 import numpy as np

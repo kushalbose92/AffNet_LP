@@ -1,6 +1,5 @@
 """
 program: utilities needed by affinity matrix computation script
-author: indranil ojha
 
 """
 import pandas as pd

@@ -2,17 +2,13 @@
 program: analyze variation of beta across disjoint subgraphs 
 version: sparse tf version, multi-headed affinity with separator learning
 previous version: affNet
-changes:
-    1. run for disjoint partitions and store beta values for six large datasets
    
-author: indranil ojha
-
 """
 
 # setup environment
 env = 'windows' 
 if env=='windows':
-    root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/'
+    root = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/'
     data_folder = root+"Datasets/"
 
 # import libraries, including utils

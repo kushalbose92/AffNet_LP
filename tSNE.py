@@ -1,16 +1,12 @@
 """
 program: AffNet: tSNE plotting 
 version: first version
-changes: instead of compute_affinity(), it makes use of compute_affinity2() 
-        that returns  the model for us to work with Z-values.
-author: indranil ojha
-
 """
 
 # setup environment
 env = 'windows' 
 if env=='windows':
-    root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/'
+    root = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/'
     data_folder = root+"Datasets/"
 
 # import libraries, including utils

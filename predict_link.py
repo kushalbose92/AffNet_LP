@@ -1,8 +1,6 @@
 """
 program: AffNet 
 version: first version
-   
-author: indranil ojha
 
 """
 

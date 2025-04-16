@@ -1,21 +1,13 @@
 """
 program: compute affinity matrix for datasets 
 version: sparse tf version, multi-headed affinity with separator learning
-previous version: v6
-    changes from previous: primarily, more modular
-        a. model training and affinity matrix computation taken out as 
-            compute _afffinity which is put under models.py script
-        b. separate scripts written for homophily, link prediction and trend
-        c. torch to tf conversion for Data has been done thru python class instead of PyG
-
-author: indranil ojha
 
 """
 
 # setup environment
 env = 'windows' # ubuntu or windows
 if env=='windows':
-    root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/AffNet/'
+    root = 'D:/Devp/JRF/Submission/IEEE_multiheaded/AffNet/'
     data_folder = root+"Datasets/"
 
 # import libraries, including utils

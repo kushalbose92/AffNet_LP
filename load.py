@@ -1,6 +1,6 @@
 """
 program: utility routines for affinity matrix computation script
-author: indranil ojha
+
 """
 
 # import libraries
