@@ -13,7 +13,7 @@ pip install -r requirements.txt
 ### How to Run
 **Example**
 
-For AffNet, the main program is predict_link.py. For AffNetR, the program is main.py.
+For AffNet, the main program is *predict_link.py*. For AffNetR, the program is main.py.
 Other programs are there to reproduce graphs or other presentations in the paper.
 Most programs can be called without arguments like the following. 
 
@@ -22,7 +22,7 @@ python predict_link_approaches.py
 python plot_approaches.py
 ```
 
-The four programs predict_link.py, beta_analysis.py, predict_link_noisy.py in AffNet, and main.py in AffNetR need arguments and they are similar:
+The four programs *predict_link.py*, *beta_analysis.py*, *predict_link_noisy.py* in AffNet, and *main.py* in AffNetR need arguments and they are similar:
 
 AffNet:
 ```bash
@@ -37,8 +37,8 @@ python main.py --dataset=MovieLens1M --emb_features=16  --num_heads=4 --test_fra
 ```
 
 ### Changes you may need to do:
-1. Mandatory: Within script - root and data_folder 
-2. Optional: Within commandline arguments - Hyper-parameter values 
+1. Mandatory: Within script - *root* and *data_folder*
+2. Optional: In commandline arguments - Hyper-parameter values 
 
 ### License
 
