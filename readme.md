@@ -22,13 +22,17 @@ python predict_link_approaches.py
 python plot_approaches.py
 ```
 
-The four programs *predict_link.py*, *beta_analysis.py*, *predict_link_noisy.py* in AffNet, and *main.py* in AffNetR need arguments and they are similar:
+The following programs in AffNet need arguments and they are similar.
+*predict_link.py*, *beta_analysis.py*, *predict_link_noisy.py* 
+
+In AfNetR, *main.py* needs arguments.
 
 AffNet:
 ```bash
 python predict_link.py --dataset=Cora --emb_features=358 --n_heads=4 --max_nodes=2708 --init_lr=0.002 --epochs=2000
 python beta_analysis.py --dataset=Cora --emb_features=358 --n_heads=4 --max_nodes=2708 --init_lr=0.002 --epochs=2000
 python predict_link_noisy.py --dataset=Cora --emb_features=358 --n_heads=4 --max_nodes=2708 --init_lr=0.002 --epochs=2000
+etc
 ```
 
 ```bash
