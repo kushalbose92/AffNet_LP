@@ -5,24 +5,24 @@ author: indranil ojha
 
 """
 
+import os, sys
+if "spyder_kernels" in sys.modules:
+    env = 'IDE' # IDE (run segment wise within spyder) or CMD (run whole script from commandline)
+else:
+    env = 'CMD'
+
 # setup environment
-system = 'windows' 
-if system=='windows':
-	root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/codebase/affNet/'
-	data_folder = "D:/Indranil/ML2/Datasets/"
-elif system=='linux':
-    root = "/home/iplab/indro/ml2/affinity/affNet_4/"
-    data_folder = "/home/iplab/indro/ml2/Datasets/"
+root = 'D:/Indranil/JRF/Submission/affinity/codebase/affNet/'
+data_folder = "D:/Indranil/ML2/Datasets/"
 
 # import libraries, including utils
-import os, sys
 sys.path.append(root)
 
 import pandas as pd
 import numpy as np
 import time
 from utils import set_seeds, get_params, get_edge_h, eval_link_pred
-from utils import plot_hist
+from utils import plot_hist, parse_arg
 from models import compute_affinty
 from load import load_dataset, split_data_on_edges, get_random_subgraph, tf_GData
 import gc
@@ -51,8 +51,12 @@ try:
 except:
     results_df = pd.DataFrame(columns = result_cols)
 
-datasets = ['Texas', 'Wisconsin', 'Photo', 'Cora', 'CiteSeer', 'Squirrel', 'Chameleon', 'Photo', 
-            'ogbl-ppa', 'ogbl-collab', 'ogbl-citation2']
+if env=='CMD':
+    dataset_name, emb_features, n_heads, max_nodes, init_lr, epochs = parse_arg(root) # arguments passed thru commandline
+    datasets = [dataset_name]
+else:
+    datasets = ['Texas', 'Wisconsin', 'Cora', 'CiteSeer', 'Photo', 'Chameleon', 'Squirrel',
+                'ogbl-ppa', 'ogbl-collab', 'ogbl-citation2']
 
 print()
 for dataset_name in datasets:
@@ -115,9 +119,6 @@ for dataset_name in datasets:
     gc.collect()
 
     # save results
-    if system=="windows":
-        plot_flag, save_flag = True, True
-    else:
-        plot_flag, save_flag = False, True
+    plot_flag, save_flag = False, True
     plot_hist(loss_histories, dataset_name, results_folder, "Loss", plot_flag, save_flag)
 

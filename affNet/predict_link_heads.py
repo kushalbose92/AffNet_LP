@@ -3,19 +3,36 @@ program: AffNet : ablation on number of heads
 
 """
 
-# setup environment
-env = 'windows' 
-if env=='windows':
-	root = 'D:/Indranil/JRF/Submission/IEEE_multiheaded/codebase/affNet/'
-	data_folder = "D:/Indranil/ML2/Datasets/"
-
-# import libraries, including utils
 import os, sys
+# setup environment
+system = 'windows' # windows or linux
+PF = 'torch' # platform torch 
+
+if "spyder_kernels" in sys.modules:
+    env = 'IDE' # IDE (run segment wise within spyder) or CMD (run whole script from commandline)
+else:
+    env = 'CMD'
+
+if env=='CMD':
+    root = os.getcwd()+'/'
+else:
+    if system=='windows':
+    	root = 'D:/Indranil/JRF/Submission/affinity/codebase/affNet/'
+    	data_folder = "D:/Indranil/ML2/Datasets/"
+    elif system=='linux':
+        root = "/home/iplab/indro/ml2/affinity/affNet_4/"
+        data_folder = "/home/iplab/indro/ml2/Datasets/"
+
+if system=='windows':
+    data_folder = "D:/Indranil/ML2/Datasets/"
+elif system=='linux':
+    data_folder = "/home/iplab/indro/ml2/Datasets/"
+
 sys.path.append(root)
 
 import pandas as pd
 import numpy as np
-from utils import set_seeds, get_params, get_edge_h, eval_link_pred
+from utils import set_seeds, get_params, get_edge_h, eval_link_pred, parse_arg
 from models import compute_affinty
 from load import load_dataset, split_data_on_edges, get_subgraphs, tf_GData
 import gc
@@ -33,7 +50,13 @@ if not os.path.exists(results_folder):
 if not os.path.exists(results_folder+'aff_plots'):
     os.makedirs(results_folder+'aff_plots')
 
-datasets = ['Cora', 'Texas', 'Chameleon', 'Wisconsin']
+# set up basic parameters
+if env=='CMD':
+    dataset_name, emb_features, n_heads, max_nodes, init_lr, epochs = parse_arg(root) # arguments passed thru commandline
+    datasets = [dataset_name]
+else:
+    datasets = ['Texas', 'Wisconsin', 'Cora', 'CiteSeer', 'Photo', 'Chameleon', 'Squirrel',
+                'ogbl-ppa', 'ogbl-collab', 'ogbl-citation2']
 
 result_cols = ['dataset', 'heads', 'metric_name', 'metric_mean', 'metric_std']
 
