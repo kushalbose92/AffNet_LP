@@ -23,6 +23,7 @@ python plot_approaches.py
 ```
 
 The following programs in AffNet need arguments and they are similar.
+
 *predict_link.py*, *beta_analysis.py*, *predict_link_noisy.py* 
 
 In AfNetR, *main.py* needs arguments.
