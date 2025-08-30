@@ -19,7 +19,7 @@ AffNet/
 
 1. **Clone repository**
 ```bash
-git <this URL>
+git clone <this URL>
 cd AffNet
 ```
 
